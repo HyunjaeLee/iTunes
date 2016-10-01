@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		438B3E591D9E916C005D7A6E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B3E581D9E916C005D7A6E /* main.swift */; };
+		439C6B311DA008E300060C69 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C6B301DA008E300060C69 /* iTunes.swift */; };
+		43A39CEC1DA0103000991AB8 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A39CEB1DA0103000991AB8 /* ScriptingBridge.framework */; };
+		43A39CEE1DA038E700991AB8 /* musixmatchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A39CED1DA038E700991AB8 /* musixmatchApi.swift */; };
+		43A39CF01DA039EE00991AB8 /* lyricalNonsense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,12 @@
 /* Begin PBXFileReference section */
 		438B3E551D9E916C005D7A6E /* iTunes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iTunes; sourceTree = BUILT_PRODUCTS_DIR; };
 		438B3E581D9E916C005D7A6E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		439C6B2C1DA007AA00060C69 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		439C6B2D1DA007AA00060C69 /* iTunes.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iTunes.sdef; sourceTree = "<group>"; };
+		439C6B301DA008E300060C69 /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iTunes.swift; path = ../../../../Downloads/iTunes.swift; sourceTree = "<group>"; };
+		43A39CEB1DA0103000991AB8 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		43A39CED1DA038E700991AB8 /* musixmatchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musixmatchApi.swift; sourceTree = "<group>"; };
+		43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lyricalNonsense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A39CEC1DA0103000991AB8 /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +54,7 @@
 			children = (
 				438B3E571D9E916C005D7A6E /* iTunes */,
 				438B3E561D9E916C005D7A6E /* Products */,
+				439C6B241D9FE99D00060C69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +69,22 @@
 		438B3E571D9E916C005D7A6E /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
+				439C6B2C1DA007AA00060C69 /* iTunes.h */,
+				439C6B2D1DA007AA00060C69 /* iTunes.sdef */,
+				439C6B301DA008E300060C69 /* iTunes.swift */,
 				438B3E581D9E916C005D7A6E /* main.swift */,
+				43A39CED1DA038E700991AB8 /* musixmatchApi.swift */,
+				43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */,
 			);
 			path = iTunes;
+			sourceTree = "<group>";
+		};
+		439C6B241D9FE99D00060C69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A39CEB1DA0103000991AB8 /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				438B3E591D9E916C005D7A6E /* main.swift in Sources */,
+				43A39CF01DA039EE00991AB8 /* lyricalNonsense.swift in Sources */,
+				43A39CEE1DA038E700991AB8 /* musixmatchApi.swift in Sources */,
+				439C6B311DA008E300060C69 /* iTunes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +249,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = CU6TTXXQZE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -230,6 +259,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = CU6TTXXQZE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -253,6 +283,7 @@
 				438B3E5E1D9E916C005D7A6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
