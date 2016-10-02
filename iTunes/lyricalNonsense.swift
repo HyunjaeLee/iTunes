@@ -18,6 +18,7 @@ func google(string: String) -> URL? {
     for match in matches {
         if("\(match)".contains("http://www.lyrical-nonsense.com/lyrics/")){
             result = match.url
+            break; // gets the first match
         }
     }
     return result

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431796441DA0F39D00541E8B /* iTunesScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 431796431DA0F39D00541E8B /* iTunesScript.m */; };
 		438B3E591D9E916C005D7A6E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B3E581D9E916C005D7A6E /* main.swift */; };
-		439C6B311DA008E300060C69 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439C6B301DA008E300060C69 /* iTunes.swift */; };
 		43A39CEC1DA0103000991AB8 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A39CEB1DA0103000991AB8 /* ScriptingBridge.framework */; };
 		43A39CEE1DA038E700991AB8 /* musixmatchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A39CED1DA038E700991AB8 /* musixmatchApi.swift */; };
 		43A39CF01DA039EE00991AB8 /* lyricalNonsense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */; };
@@ -27,11 +27,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		431796411DA0F39C00541E8B /* iTunes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTunes-Bridging-Header.h"; sourceTree = "<group>"; };
+		431796421DA0F39D00541E8B /* iTunesScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesScript.h; sourceTree = "<group>"; };
+		431796431DA0F39D00541E8B /* iTunesScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesScript.m; sourceTree = "<group>"; };
 		438B3E551D9E916C005D7A6E /* iTunes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iTunes; sourceTree = BUILT_PRODUCTS_DIR; };
 		438B3E581D9E916C005D7A6E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		439C6B2C1DA007AA00060C69 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		439C6B2D1DA007AA00060C69 /* iTunes.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = iTunes.sdef; sourceTree = "<group>"; };
-		439C6B301DA008E300060C69 /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iTunes.swift; path = ../../../../Downloads/iTunes.swift; sourceTree = "<group>"; };
 		43A39CEB1DA0103000991AB8 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		43A39CED1DA038E700991AB8 /* musixmatchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = musixmatchApi.swift; sourceTree = "<group>"; };
 		43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lyricalNonsense.swift; sourceTree = "<group>"; };
@@ -71,10 +73,12 @@
 			children = (
 				439C6B2C1DA007AA00060C69 /* iTunes.h */,
 				439C6B2D1DA007AA00060C69 /* iTunes.sdef */,
-				439C6B301DA008E300060C69 /* iTunes.swift */,
 				438B3E581D9E916C005D7A6E /* main.swift */,
+				431796421DA0F39D00541E8B /* iTunesScript.h */,
+				431796431DA0F39D00541E8B /* iTunesScript.m */,
 				43A39CED1DA038E700991AB8 /* musixmatchApi.swift */,
 				43A39CEF1DA039EE00991AB8 /* lyricalNonsense.swift */,
+				431796411DA0F39C00541E8B /* iTunes-Bridging-Header.h */,
 			);
 			path = iTunes;
 			sourceTree = "<group>";
@@ -120,6 +124,7 @@
 					438B3E541D9E916C005D7A6E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = CU6TTXXQZE;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -148,8 +153,8 @@
 			files = (
 				438B3E591D9E916C005D7A6E /* main.swift in Sources */,
 				43A39CF01DA039EE00991AB8 /* lyricalNonsense.swift in Sources */,
+				431796441DA0F39D00541E8B /* iTunesScript.m in Sources */,
 				43A39CEE1DA038E700991AB8 /* musixmatchApi.swift in Sources */,
-				439C6B311DA008E300060C69 /* iTunes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,9 +252,12 @@
 		438B3E5D1D9E916C005D7A6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CU6TTXXQZE;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iTunes/iTunes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -257,9 +265,11 @@
 		438B3E5E1D9E916C005D7A6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = CU6TTXXQZE;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iTunes/iTunes-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

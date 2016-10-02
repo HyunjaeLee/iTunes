@@ -7,27 +7,32 @@
 //
 
 import Foundation
-import ScriptingBridge
 
-let iTunes: iTunesApplication = SBApplication(bundleIdentifier: "com.apple.iTunes")!
+var iTunes = iTunesScript();
 
-while(iTunes.playerState == iTunesEPlS.Playing){
-    let currentTrack: iTunesTrack? = iTunes.currentTrack!
-    let artist = currentTrack?.artist!
-    let name = currentTrack?.name!
-    let nameEscaped = name?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-    let artistEscaped = artist?.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+while(iTunes.isPlaying()){
+    
+    let artist = iTunes.artist
+    let name = iTunes.name
     let string = name!+" "+artist!
-    let stringEscaped = nameEscaped!+"%20"+artistEscaped!
+    let stringEscaped = string.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+    
     print(string)
+    
     if let lyrics = lyricalNonsense(string: stringEscaped) {
-        currentTrack?.setLyrics!(lyrics)
+        
+        iTunes.lyrics = lyrics
         print("done")
+        
     } else {
+        
         print("failed")
+        
     }
-    iTunes.nextTrack!()
- }
+    
+    iTunes.nextTrack()
+    
+}
 
 
 
